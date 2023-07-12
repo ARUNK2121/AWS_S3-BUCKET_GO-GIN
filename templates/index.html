@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s3 upload</title>
+</head>
+<body>
+    <h1>Upload image</h1>
+    <div>
+        {{if .image}}
+        <img src="{{.image}}"/>
+        {{end}}
+    </div>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="upload">
+        {{if .error}}
+        <p>{{.error}}</p>
+        {{end}}
+    </form>
+    
+</body>
+</html>
